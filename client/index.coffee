@@ -22,7 +22,7 @@ VIS_OPTIONS =
     navigationButtons: false
     selectConnectedEdges: false
   physics: 
-    stabilization: false
+    stabilization: true
   groups:
     Person:
       borderWidth: 2
@@ -35,7 +35,7 @@ VIS_OPTIONS =
         hover:
           background: 'rgba(75, 159, 236, 0.75)'
           border: NS.border
-    Movie:
+    Area:
       borderWidth: 2
       color: 
         background: 'rgba(241, 187, 12, 0.95)'
@@ -46,7 +46,7 @@ VIS_OPTIONS =
         hover:
           background: 'rgba(241, 187, 12, 0.75)'
           border: NS.border
-    Place:
+    tools:
       borderWidth: 2
       color: 
         background: 'rgba(230, 66, 66, 0.95)'
@@ -101,8 +101,8 @@ makeFakeRelation = (template, from, to, container) ->
       from: template.fromId
       to: template.toId
       id: template.rid
-      label: 'KNOWS'
-      group: 'KNOWS'
+      label: 'belong_to'
+      group: 'belong_to'
       arrows: 'to'
 
   template.edgesDS = new vis.DataSet [template.relationship]
@@ -114,6 +114,7 @@ makeFakeRelation = (template, from, to, container) ->
 ###
 Create `nl2br` global helper on startup
 ###
+
 Meteor.startup ->
   Template.registerHelper 'nl2br', (string) ->
     if string and not _.isEmpty string
@@ -348,8 +349,8 @@ Template.createRelationship.onRendered ->
     to: @to.id
     arrows: 'to'
     dashes: true
-    label: 'KNOWS'
-    group: 'KNOWS'
+    label: 'belong_to'
+    group: 'belong_to'
 
   MainTemplate.edgesDS.add MainTemplate.previewEdge
 

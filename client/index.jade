@@ -10,12 +10,11 @@ head
   title 
 
 body
-  a(href='https://github.com/VeliovGroup/ostrio-neo4jdriver')
-    img.gh-ribbon(src='https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67' alt='Fork me on GitHub' data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png')
+
   .navbar.navbar-default
     .container-fluid
       .navbar-header
-        a.navbar-brand(href="https://github.com/VeliovGroup/ostrio-neo4jdriver") Graph Database - workflow PagarMe 
+        a.navbar-brand(href="https://github.com/sn3fru/workflow") Graph Database - workflow PagarMe 
   .container-fluid
     +main
 
@@ -23,9 +22,9 @@ template(name="main")
   .col-md-9
     .panel.panel-default
       .panel-heading
-        h3.panel-title Add/Remove/Change Nodes
+        h3.panel-title 
       .panel-body#graph(style="padding:0px")
-      .panel-footer.important.center
+      .panel-footer.center
         h5 
           | Powered by 
           a(href="http://www.graphenedb.com") GrapheneDB
@@ -52,9 +51,10 @@ template(name="main")
             .form-group
               label(for="label") Select Label
               select.form-control(name="label")
-                option(value="Person") Pessoas
-                option(value="Place") Areas
-                option(value="Movie") Processos
+                option(value="Person") Person
+                option(value="Areas") Areas
+                option(value="tools") tools
+
             .form-group
               label(for="description") Description
               textarea.form-control(name="description")
@@ -82,8 +82,8 @@ template(name="main")
                 label(for="label") Select Label
                 select.form-control(name="label")
                   option(value="Person" selected="{{#if isLabel 'Person' nodeFrom}}selected{{/if}}") Person
-                  option(value="Place" selected="{{#if isLabel 'Place' nodeFrom}}selected{{/if}}") Place
-                  option(value="Movie" selected="{{#if isLabel 'Movie' nodeFrom}}selected{{/if}}") Movie
+                  option(value="Area" selected="{{#if isLabel 'Area' nodeFrom}}selected{{/if}}") Area
+                  option(value="tools" selected="{{#if isLabel 'tools' nodeFrom}}selected{{/if}}") tools
               .form-group
                 label(for="description") Description
                 textarea.form-control(name="description") {{nodeFrom.description}}
