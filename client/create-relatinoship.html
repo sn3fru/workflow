@@ -1,0 +1,31 @@
+<template name="createRelationship">
+  <form id="createRelationship">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h5 class="panel-title">Create relationship between nodes</h5>
+      </div>
+      <div id="createRelPreview" style="padding:0px" class="panel-body"></div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label for="type">Select relationship type</label>
+          <select id="type" name="type" class="form-control">
+            <option value="KNOWS">KNOWS</option>
+            <option value="FRIENDS">FRIENDS</option>
+            <option value="LIKES">LIKES</option>
+            <option value="HATES">HATES</option>
+            <option value="FOLLOWS">FOLLOWS</option>
+            <option value="FILMED AT">FILMED AT</option>
+            <option value="LIVES AT">LIVES AT</option>
+          </select>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea name="description" class="form-control"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <button type="submit" class="btn btn-block btn-success">Create Relationship</button>
+      </div>
+    </div>
+  </form>
+</template>
